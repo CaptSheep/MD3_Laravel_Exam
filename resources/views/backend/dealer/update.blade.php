@@ -21,6 +21,10 @@
         </select>
     </div>
     <div class="form-group has-success has-feedback">
+        <label class="control-label" for="name">Code</label>
+        <input type="text" class="form-control" id="code" aria-describedby="usernameStatus" name="code" value="{{$dealer->code}}">
+    </div>
+    <div class="form-group has-success has-feedback">
         <label class="control-label" for="name">Name</label>
         <input type="text" class="form-control" id="name" aria-describedby="usernameStatus" name="name" value="{{$dealer->name}}">
     </div>

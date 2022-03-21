@@ -21,6 +21,13 @@
         @endforeach
     </select>
     <div class="form-group has-success has-feedback">
+        <label class="control-label" for="name">Code</label>
+        <input type="text" class="form-control" id="code" aria-describedby="usernameStatus" name="code">
+    </div>
+    @if($errors->any())
+        <p style="color: red">{{$errors->first('code')}}</p>
+    @endif
+    <div class="form-group has-success has-feedback">
         <label class="control-label" for="name">Name</label>
         <input type="text" class="form-control" id="name" aria-describedby="usernameStatus" name="name">
     </div>

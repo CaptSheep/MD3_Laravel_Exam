@@ -19,6 +19,7 @@ class DealersFactory extends Factory
     public function definition()
     {
         return [
+            'code'=>$this->faker->numberBetween(100,999),
             'name'=>$this->faker->name,
             'phoneNumber'=>$this->faker->phoneNumber,
             'email'=>$this->faker->safeEmail,

@@ -26,6 +26,7 @@ class DealerController extends Controller
     public function store(CreateFormRequest $request)
     {
         $dealer = new Dealers();
+        $dealer->code = $request->code;
         $dealer->name = $request->name;
         $dealer->phoneNumber = $request->phoneNumber;
         $dealer->email = $request->email;
@@ -56,6 +57,7 @@ class DealerController extends Controller
     {
         $status = Status::all();
         $dealer = Dealers::findOrFail($id);
+        $dealer->code = $request->code;
         $dealer->name = $request->name;
         $dealer->phoneNumber = $request->phoneNumber;
         $dealer->email = $request->email;
@@ -71,5 +73,14 @@ class DealerController extends Controller
     {
         Dealers::destroy($id);
         return redirect()->route('dealers.index');
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+        $dealers = Dealers::query()
+            ->join('status','dealers.status_id','=','status.id')->where('owner','LIKE',"%{$search}%")->select('dealers.*','status.name as statusname')->get();
+        return view('backend.dealer.list',compact('dealers'));
+
     }
 }

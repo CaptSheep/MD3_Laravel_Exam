@@ -24,6 +24,7 @@ class CreateFormRequest extends FormRequest
     public function rules()
     {
         return [
+            'code'=>'required',
             'name'=>'required',
             'phoneNumber'=>'required',
             'email'=>'required',
@@ -35,6 +36,7 @@ class CreateFormRequest extends FormRequest
     public function message ()
     {
         $message = [
+            'code'=>'Code can not null',
             'name.required' => 'Your Name can not null',
             'phoneNumber.required'=>'Your Phone Number can not null',
             'email.required'=>'Your Email can not null',

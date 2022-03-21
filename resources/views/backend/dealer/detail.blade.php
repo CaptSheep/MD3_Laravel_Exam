@@ -12,6 +12,7 @@
 <table border="1" class="table">
     <thead class="thead-dark">
     <tr>
+        <th style="text-align: center">Code</th>
         <th style="text-align: center" >Status</th>
         <th style="text-align: center">Name</th>
         <th style="text-align: center">Phone Number</th>
@@ -23,6 +24,7 @@
     <tbody>
     @foreach($dealers as  $dealer)
         <tr>
+            <td style="text-align: center">{{$dealer->code}}</td>
             <td style="text-align: center">{{$dealer->status->name}}</td>
             <td style="text-align: center">{{$dealer->name}}</td>
             <td style="text-align: center">{{$dealer->phoneNumber}}</td>

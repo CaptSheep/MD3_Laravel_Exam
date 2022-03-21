@@ -25,3 +25,4 @@ Route::get('/index/{id}/show',[DealerController::class,'show'])->name('dealers.s
 Route::get('/index/{id}/update',[DealerController::class,'edit'])->name('dealers.edit');
 Route::post('/index/{id}/update',[DealerController::class,'update'])->name('dealers.update');
 Route::get('/index/{id}/destroy',[DealerController::class,'destroy'])->name('dealers.destroy');
+Route::get('/search',[DealerController::class,'search'])->name('dealers.search');

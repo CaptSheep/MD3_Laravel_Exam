@@ -10,6 +10,7 @@ class Dealers extends Model
     use HasFactory;
     protected $table = 'dealers';
     protected $fillable = [
+        'code',
         'name',
         'phoneNumber',
         'email',
